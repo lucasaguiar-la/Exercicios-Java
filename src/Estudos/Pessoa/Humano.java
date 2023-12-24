@@ -9,6 +9,59 @@ public class Humano {
 	
 	Scanner scan = new Scanner(System.in);
 	
+	public void Banco() {
+		String opcao, nome, menuBanco;
+		double addDinheiro, subDinheiro;
+		
+		System.out.println("===================================");
+		System.out.println("-==Olá, seja bem-vindo ao banco!==-");
+		System.out.println("===================================");
+		System.out.println("Por favor, escolha uma opção:");
+		System.out.println("1) Depositar dinheiro\n"
+				+ "2) Transferir dinheiro\n"
+				+ "3) Sair");
+		opcao = scan.next();
+		
+		if(opcao.equals("1") || opcao.equals("2")) {
+			switch(opcao) {
+				case "1":
+					System.out.println("\nQuanto você deseta adicionar a sua conta?");
+					addDinheiro = scan.nextDouble();
+					carteira += addDinheiro;
+					System.out.println("Valor adicionado com sucesso!\n"
+							+ "Valor adicionado: R$" + addDinheiro
+							+ "\nCarteira: R$" + carteira);
+					break;
+				case "2":
+					System.out.println("\nPara quem você gostaria de transferir? (Insira um nome)");
+					nome = scan.next();
+					System.out.println("\nQuanto você gostaria de transferir para " + nome + "?");
+					subDinheiro = scan.nextDouble();
+					carteira -= subDinheiro;
+					System.out.println("Valor transferido com sucesso!\n"
+							+ "Valor transferido: R$" + subDinheiro
+							+ "\nCarteira: R$" + carteira);
+				}
+			System.out.println("Fazer outra operação? (s/n)");
+			menuBanco = scan.next().toLowerCase();
+			
+			if(menuBanco.equals("s")) {
+				Banco();
+			}else if(menuBanco.equals("n")){
+				System.out.println("\nObrigado por utilizar nossos seerviços!");
+			} else {
+				System.out.println("Opção inválida!");
+				Banco();
+			}
+			
+		}else if(opcao.equals("3")) {
+			System.out.println("\nObrigado por utilizar nosso serviços!");
+		}else {
+			System.out.println("\nOpção inválida, por favor, insira um dígito válido!");
+			Banco();
+		}
+	}
+	
 	public void Restaurante() {
 		String opcao;
 		

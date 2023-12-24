@@ -5,7 +5,7 @@ public class AppPessoa {
 	public static void main(String[] args) {
 
 		Humano pessoa = new Humano();
-		pessoa.Restaurante();
+		pessoa.Banco();
 
 	}
 
