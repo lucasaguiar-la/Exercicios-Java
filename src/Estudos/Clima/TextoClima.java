@@ -2,7 +2,7 @@ package Estudos.Clima;
 import java.util.Scanner;
 
 public class TextoClima {
-	public String Texto() {
+	public static String Texto() {
 		Scanner scan = new Scanner(System.in);
 		double c = 27;
 		String resposta;
@@ -17,6 +17,7 @@ public class TextoClima {
 		+ "\n3) Réaumur "
 		+ "\n4) Rankine");
 		resposta = scan.next();
+		scan.close();
 		
 		return resposta;
 	}

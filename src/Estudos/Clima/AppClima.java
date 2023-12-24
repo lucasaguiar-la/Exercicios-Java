@@ -16,7 +16,33 @@ public class AppClima {
 		 ra = (c * 1.8) + 32 + 459.67;
 		 
 		 new TextoClima();
-
+		 
+		 do {
+				resposta = TextoClima.Texto();
+			
+				switch(resposta) {
+					case "1":
+						System.out.println("\nEm Kelvin " + c + "°C são:\n"
+								+ k + " K");
+						break;
+					case "2":
+						System.out.println("\nEm Fahrenheit " + c + "°C são:\n"
+								+ f + " °F");
+						break;
+					case "3":
+						System.out.println("\nEm Réaumur " + c + "°C são:\n"
+								+ re + " °Re");
+						break;
+					case "4":
+						System.out.println("\nEm Rankine " + c + "°C são:\n"
+								+ ra + " °Ra");
+						break;
+					default:
+		                System.out.println("Opção inválida.");
+				}
+				System.out.println("\nDeseja fazer outra operação? (s/n)");
+				opcao = scan.next().toLowerCase();
+			}while((!resposta.equals("1") && !resposta.equals("2") && !resposta.equals("3") && !resposta.equals("4")) || (!opcao.equals("n")));
+		 scan.close();
+		}
 	}
-
-}
