@@ -2,7 +2,7 @@ package Estudos.PdrPplTes;
 //import java.util.Scanner;
 
 public class PedraPapelTesoura {
-	// "Papel" "Pedra" "Tesoura"
+	// "Papel" "Folha" "Tesoura"
 
 	public static void main(String[] args) {
 		//Scanner scan = new Scanner(System.in);
@@ -15,7 +15,7 @@ public class PedraPapelTesoura {
 				+ "======================================================\n");
 		
 		Regras regra = new Regras();
-		regra.compara("Tesoura", "Papel");
+		regra.play();
 		 
 		
 	}

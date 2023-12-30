@@ -41,8 +41,7 @@ public class Regras {
 	public String maquina() {
 		int escolha = sortearIndice(jogada.length);
 		escolhaMaquina = jogada[escolha];
-		
-		System.out.println("Eu escolho: " + escolhaMaquina);
+
 		return escolhaMaquina;
 	}
 	
