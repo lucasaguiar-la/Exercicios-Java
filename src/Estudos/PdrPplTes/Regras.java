@@ -6,6 +6,7 @@ public class Regras {
 	
 	String escolhaJogador;
 	String escolhaMaquina;
+	String resposta;
 	Scanner scan = new Scanner(System.in);
 	String jogada[] = {"Pedra", "Folha", "Tesoura"};
 	
@@ -13,6 +14,7 @@ public class Regras {
 		jogador();
 		maquina();
 		compara(escolhaJogador, escolhaMaquina);
+		repete();
 	}
 	
 	public String jogador() {
@@ -50,7 +52,9 @@ public class Regras {
 			System.out.println("Jogador: " + escolhaJogador
 					+ "\nMaquina: " + escolhaMaquina
 					+ "\nDeu empate!");
-		}else if((escolhaJogador == "Pedra" && escolhaMaquina == "Tesoura") || (escolhaJogador == "Tesoura" && escolhaMaquina == "Folha") || (escolhaJogador == "Folha" && escolhaMaquina == "Pedra")) {
+		}else if((escolhaJogador == "Pedra" && escolhaMaquina == "Tesoura") || 
+				(escolhaJogador == "Tesoura" && escolhaMaquina == "Folha") || 
+				(escolhaJogador == "Folha" && escolhaMaquina == "Pedra")) {
 			System.out.println("Jogador: " + escolhaJogador
 					+ "\nMaquina: " + escolhaMaquina
 					+ "\nVOCÊ GANHOU!");
@@ -61,9 +65,29 @@ public class Regras {
 		}
 	}
 	
+	public void repete() {
+		do {
+			System.out.println("\nQuer jogar de novo? (s/n)");
+		resposta = scan.next().toLowerCase();
+		}while(!resposta.equals("s") && !resposta.equals("n"));
+		
+		if(resposta.equals("s")) {
+			play();
+		}else {
+			System.out.println("\nObrigado por jogar!!");
+		}
+	}
 	
 	private static int sortearIndice(int tamanhoLista) {
         Random random = new Random();
         return random.nextInt(tamanhoLista);
     }
+	
+	public void timer(int seg) {
+		try {
+            Thread.sleep(seg);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+	}
 }
