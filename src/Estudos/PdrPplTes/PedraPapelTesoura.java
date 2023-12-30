@@ -14,6 +14,7 @@ public class PedraPapelTesoura {
 				+ "======================================================\n");
 		
 		Regras regra = new Regras();
+		regra.maquina();
 		 
 		
 	}
